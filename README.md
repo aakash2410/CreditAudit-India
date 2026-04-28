@@ -8,7 +8,7 @@ By applying a **Two-Stage (Heckman-style) Deep Learning Framework** coupled with
 
 ## 📄 Concept Note
 
-**The Problem:** Traditional algorithmic fairness audits often fall into the trap of **Survivorship Bias**. If we only analyze households that successfully secured a bank loan, or even those who currently hold any debt, we ignore the populations suffering from extreme financial redlining—those who are completely excluded from the market or discouraged from even applying (the "chilling effect"). 
+**The Problem:** Traditional algorithmic fairness audits often fall into the trap of **Survivorship Bias**. If we only analyze households that successfully secured a bank loan, or even those who currently hold any debt, we ignore the populations suffering from extreme financial redlining—those who are completely excluded from the market or discouraged from even applying. 
 
 **The Duality of Zero-Debt:** In developmental economics, having "zero debt" is not always a sign of wealth or self-sufficiency. For marginalized demographics, it is frequently a sign of absolute credit rationing. 
 
