@@ -6,17 +6,12 @@ from sklearn.preprocessing import StandardScaler
 from aif360.datasets import BinaryLabelDataset
 from aif360.metrics import ClassificationMetric
 
-def build_and_evaluate_baseline():
+def build_and_evaluate_stage1():
     print("Loading prepared dataset...")
     df = pd.read_csv("/Users/aakashsangani/Desktop/CreditAudit/processed_nsso_credit.csv")
     
     # Fill NAs
     df.fillna(0, inplace=True)
-    
-    # Filter for Stage 2: Only those in the credit market
-    print("Filtering for Stage 2 (Allocation Model): Only households with debt...")
-    df = df[df['In_Credit_Market'] == 1].copy()
-    
     
     # Feature Engineering
     features = ['Is_Female_Head', 'Is_Rural', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets']
@@ -36,19 +31,19 @@ def build_and_evaluate_baseline():
             
     X = df[features]
     weights = df['MLT']
-    y = df['Is_Institutional']
+    y = df['In_Credit_Market']
     
     # Scaling
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
     # Convert back to DF to track the index
-    X_scaled = pd.DataFrame(X_scaled, columns=features, index=X.index)
+    X_scaled = pd.DataFrame(X_scaled, columns=features)
     
     # Split
     X_train, X_test, y_train, y_test, w_train, w_test = train_test_split(X_scaled, y, weights, test_size=0.2, random_state=42)
     
-    print("Building Baseline TF Model...")
+    print("Building Stage 1 (Market Access) TF Model...")
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),
         tf.keras.layers.Dropout(0.3),
@@ -60,7 +55,7 @@ def build_and_evaluate_baseline():
     
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     
-    print("Training Baseline Model...")
+    print("Training Stage 1 Model...")
     model.fit(X_train, y_train, sample_weight=w_train, epochs=5, batch_size=128, validation_split=0.2, verbose=1)
     
     # Predictions
@@ -68,15 +63,15 @@ def build_and_evaluate_baseline():
     y_pred = (y_pred_prob >= 0.5).astype(int).flatten()
     
     # --- FAIRNESS AUDIT with AIF360 ---
-    print("\nAuditing Baseline Model across Multi-Dimensional Protected Attributes...")
+    print("\nAuditing Stage 1 Model across Multi-Dimensional Protected Attributes...")
     
     # Reconstruct datasets
     df_test_raw = df.loc[X_test.index].copy()
-    df_test_raw['Is_Institutional'] = y_test
+    df_test_raw['In_Credit_Market'] = y_test
     df_test_raw['MLT'] = w_test
     
     df_pred_raw = df_test_raw.copy()
-    df_pred_raw['Is_Institutional'] = y_pred
+    df_pred_raw['In_Credit_Market'] = y_pred
 
     protected_attributes = {
         'Is_Rural': ('RURAL VS URBAN', 1, 0),
@@ -88,7 +83,7 @@ def build_and_evaluate_baseline():
     for attr, (desc, unpriv_val, priv_val) in protected_attributes.items():
         dataset_orig = BinaryLabelDataset(
             favorable_label=1, unfavorable_label=0, df=df_test_raw,
-            label_names=['Is_Institutional'], protected_attribute_names=[attr],
+            label_names=['In_Credit_Market'], protected_attribute_names=[attr],
             instance_weights_name='MLT',
             unprivileged_protected_attributes=[[unpriv_val]],
             privileged_protected_attributes=[[priv_val]]
@@ -96,24 +91,27 @@ def build_and_evaluate_baseline():
         
         dataset_pred = BinaryLabelDataset(
             favorable_label=1, unfavorable_label=0, df=df_pred_raw,
-            label_names=['Is_Institutional'], protected_attribute_names=[attr],
+            label_names=['In_Credit_Market'], protected_attribute_names=[attr],
             instance_weights_name='MLT',
             unprivileged_protected_attributes=[[unpriv_val]],
             privileged_protected_attributes=[[priv_val]]
         )
 
-        metric = ClassificationMetric(dataset_orig, dataset_pred, 
-                                      unprivileged_groups=[{attr: unpriv_val}], 
-                                      privileged_groups=[{attr: priv_val}])
-        
-        print("\n" + "="*50)
-        print(f"BASELINE MODEL FAIRNESS: {desc}")
-        print("="*50)
-        print(f"Accuracy:                  {(y_pred == y_test).mean():.4f}")
-        print(f"Disparate Impact:          {metric.disparate_impact():.4f} (Ideal: 1.0)")
-        print(f"Equal Opportunity Diff:    {metric.equal_opportunity_difference():.4f} (Ideal: 0.0)")
-        print(f"Statistical Parity Diff:   {metric.statistical_parity_difference():.4f} (Ideal: 0.0)")
-        print("="*50)
+        try:
+            metric = ClassificationMetric(dataset_orig, dataset_pred, 
+                                          unprivileged_groups=[{attr: unpriv_val}], 
+                                          privileged_groups=[{attr: priv_val}])
+            
+            print("\n" + "="*50)
+            print(f"STAGE 1 (ACCESS) MODEL FAIRNESS: {desc}")
+            print("="*50)
+            print(f"Accuracy:                  {(y_pred == y_test).mean():.4f}")
+            print(f"Disparate Impact:          {metric.disparate_impact():.4f} (Ideal: 1.0)")
+            print(f"Equal Opportunity Diff:    {metric.equal_opportunity_difference():.4f} (Ideal: 0.0)")
+            print(f"Statistical Parity Diff:   {metric.statistical_parity_difference():.4f} (Ideal: 0.0)")
+            print("="*50)
+        except Exception as e:
+            print(f"Could not compute metrics for {desc}: {e}")
 
 if __name__ == "__main__":
-    build_and_evaluate_baseline()
+    build_and_evaluate_stage1()

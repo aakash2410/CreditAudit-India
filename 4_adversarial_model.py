@@ -15,6 +15,10 @@ def build_adversarial_debiasing_model():
     df = pd.read_csv("/Users/aakashsangani/Desktop/CreditAudit/processed_nsso_credit.csv")
     df.fillna(0, inplace=True)
     
+    # Filter for Stage 2: Only those in the credit market
+    print("Filtering for Stage 2 (Allocation Model): Only households with debt...")
+    df = df[df['In_Credit_Market'] == 1].copy()
+    
     # Categorical and numerical setup
     categorical_cols = ['State', 'District', 'HH_Type']
     for cat in categorical_cols:
@@ -23,7 +27,7 @@ def build_adversarial_debiasing_model():
             df = pd.concat([df, df_cat], axis=1)
             
     # Include the base continuous features + all the new dummy columns
-    num_features = ['Is_Rural', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets']
+    num_features = ['Is_Female_Head', 'Is_Rural', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets']
     features = num_features + [c for c in df.columns if any(c.startswith(prefix + '_') for prefix in categorical_cols)]
     
     # Log scale extreme power-law distributions (wealth)
@@ -39,7 +43,8 @@ def build_adversarial_debiasing_model():
     protected_attributes = {
         'Is_Rural': ('RURAL VS URBAN', 1, 0),
         'Is_Minority_Religion': ('MINORITY VS MAJORITY RELIGION', 1, 0),
-        'Is_Marginalized_Caste': ('SC/ST/OBC VS GENERAL CASTE', 1, 0)
+        'Is_Marginalized_Caste': ('SC/ST/OBC VS GENERAL CASTE', 1, 0),
+        'Is_Female_Head': ('FEMALE VS MALE HEAD', 1, 0)
     }
 
     print("\nExecuting AIF360 Adversarial Debiasing Models Across All Dimensions...")
