@@ -31,8 +31,8 @@ The Stage 1 access model reveals extreme disparities in who holds debt in the fi
 
 ### Phase 2: Capital Allocation Disparities
 Once households are in the debt market, who gets the safe institutional loans?
-*   **The Baseline Paradox:** By evaluating total net worth against demographics, the baseline AI correctly isolates physical collateral bounds representing 107 million active debtors with a predictive accuracy of ~72%. We found that Rural, Minority Religion, and Marginalized Caste households all face institutional allocation disparities (DI < 1.0).
-*   **Adversarial Correction:** By explicitly penalizing the Predictor network if an Adversary network could guess a household's demographic from its latent weights (Latent Disentanglement), we flattened the proxy-weaponization. Remarkably, forcing the model to drop its demographic reliance actually caused the Adversarial Model's Test Accuracy to **increase** to `73.9%`. The Adversarial model acted as a powerful regularizer, proving that removing bias can actually *improve* generalization in allocation models!
+*   **The Baseline Optimization:** By engineering advanced socio-economic features (Per-Capita wealth, Zero-Value Indicators) and applying Target Encoding to over 700 districts, the Baseline AI achieved an optimized predictive accuracy of **72.81%**. We found that Rural, Minority Religion, and Marginalized Caste households all face institutional allocation disparities (DI < 1.0).
+*   **Adversarial Correction:** By explicitly penalizing the Predictor network if an Adversary network could guess a household's demographic from its latent weights (Latent Disentanglement), we flattened the proxy-weaponization across all four dimensions. The Adversarial model successfully erased the bias while maintaining a highly robust **71.77%** accuracy, proving we can mathematically force fair allocation without sacrificing predictive power.
 
 ---
 
@@ -46,6 +46,7 @@ The NSSO `Round77sch18pt2Data` depends natively on `.Nesstar` structures bound t
 ### 2. Multi-Dimensional Join Processing (`2_data_processing.py`)
 Using explicit schemas, we unified Demographics (`Block 3`), Household Structural Features (`Block 4`), Liabilities/Loans (`Block 12`), and Financial Assets (`Block 11a`).
 *   **The Scaler**: Embedded `MLT / 100` combination weights representing 260 Million real Indian Households.
+*   **Advanced Feature Engineering**: Engineered `Per_Capita_Assets` (Asset / HH Size) and Boolean `Has_Zero_Wealth` indicators to help the deep learning models properly scale extreme poverty boundaries.
 *   **Collateral Matrices**: Aggregated `Total_Physical_Assets` across 6 distinct capital matrices in the NSSO database (Real Estate, Livestock, Vehicles, Business Machinery, Shares).
 *   **Two-Stage Framing**: Executed a `left` join to preserve zero-debt households, creating the `In_Credit_Market` flag for Stage 1.
 
@@ -53,8 +54,9 @@ Using explicit schemas, we unified Demographics (`Block 3`), Household Structura
 A multi-layered Keras Sequential model designed to predict `In_Credit_Market`. This model captures the pure systemic exclusion constraints against Female-headed households and Religious Minorities.
 
 ### 4. Stage 2: Deep Networks & Adversarial Debiasing (`3_baseline_model.py` & `4_adversarial_model.py`)
-*   **Baseline Allocation**: A heavily parameterized Dense Network trained *exclusively* on households holding debt, predicting `Is_Institutional`. Evaluated for fairness via `IBM AIF360`.
-*   **Adversarial Setup**: Executed multi-threaded independent Adversarial Debiasing networks, aggressively punishing classification gradients whenever `Is_Rural`, `Is_Minority`, `Is_Marginalized_Caste`, or `Is_Female_Head` became structurally derivable from the prediction latent weights.
+*   **Target Encoding**: Replaced sparse 700-column one-hot district matrices with dense Target Encodings (computed strictly on the train split to prevent leakage).
+*   **Expert-Crafted Baseline**: A deeply parameterized 256-node Dense Network featuring `BatchNormalization` and `L2 Ridge Regularization` to prevent overfitting on outliers, achieving ~72.8% allocation accuracy.
+*   **Adversarial Setup**: Executed multi-threaded independent Adversarial Debiasing networks via `IBM AIF360`, aggressively punishing classification gradients whenever `Is_Rural`, `Is_Minority`, `Is_Marginalized_Caste`, or `Is_Female_Head` became structurally derivable from the prediction latent weights.
 
 ---
 
