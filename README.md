@@ -13,7 +13,7 @@ By applying a **Two-Stage (Heckman-style) Deep Learning Framework** coupled with
 **The Duality of Zero-Debt:** In developmental economics, having "zero debt" is not always a sign of wealth or self-sufficiency. For marginalized demographics, it is frequently a sign of absolute credit rationing. 
 
 **The Solution:** To make this audit mathematically robust, we deployed a **Two-Stage Selection Model**:
-1.  **Stage 1 (Market Access / The Chilling Effect):** Before predicting *who* gets a bank loan, the AI first predicts the structural probability of a household participating in the credit market at all. 
+1.  **Stage 1 (Market Access):** Before predicting *who* gets a bank loan, the AI first predicts the structural probability of a household participating in the credit market at all. 
 2.  **Stage 2 (Allocation Disparities):** Given that a household is actively in the credit market (relies on debt), the AI predicts whether they secure safe, formal capital (Institutional Banks/Co-ops) or are forced into predatory lending (Informal Moneylenders).
 
 **The Defense:** This audit explicitly acknowledges that it suffers from omitted variables (like CIBIL scores or true unobserved cash flows) and relies on self-reported survey data rather than RBI origination logs. Therefore, this is not a causal proof of intentional redlining by individual loan officers. Rather, it is a **sociological audit of Credit Reliance Outcomes**. It proves that even when an AI accounts for all measurable physical collateral a household owns, the algorithm still relies heavily on geographic, caste, and gender proxies to predict who ends up with safe formal capital versus predatory informal debt.
