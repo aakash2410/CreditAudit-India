@@ -88,11 +88,14 @@ def process_nsso_data():
     hh_loans = df_loans.groupby('HHID')['Is_Institutional'].max().reset_index()
 
     print("Merging datasets...")
-    # INNER join demographics with loans to drop households with NO debt
-    df_merged = df_hh.merge(hh_loans, on='HHID', how='inner')
+    # LEFT join demographics with loans to preserve households with NO debt for Stage 1 (Heckman Access Model)
+    df_merged = df_hh.merge(hh_loans, on='HHID', how='left')
     df_merged = df_merged.merge(df_hh_chars.drop_duplicates(subset=['HHID']), on='HHID', how='left')
     df_merged = df_merged.merge(hh_assets, on='HHID', how='left')
     df_merged = df_merged.merge(hh_physical, on='HHID', how='left')
+    
+    # Create Stage 1 outcome variable: In_Credit_Market (1 if they have any loan, 0 if no debt)
+    df_merged['In_Credit_Market'] = df_merged['Is_Institutional'].notna().astype(int)
     
     # Fill NaN for households with missing data
     df_merged['Is_Institutional'] = df_merged['Is_Institutional'].fillna(0).astype(int)
@@ -100,11 +103,13 @@ def process_nsso_data():
     df_merged['Total_Physical_Assets'] = df_merged['Total_Physical_Assets'].fillna(0)
 
     # Select features
-    features = ['HHID', 'State', 'District', 'Is_Rural', 'Is_Institutional', 'MLT']
+    features = ['HHID', 'State', 'District', 'Is_Rural', 'Is_Institutional', 'In_Credit_Market', 'MLT']
     
-    # Adding age (b3q5) and education (b3q6) of head as features
+    # Adding age (b3q5), education (b3q6), and sex (b3q4) of head as features
     df_merged['Age_Head'] = pd.to_numeric(df_merged['b3q5'], errors='coerce').fillna(0)
     df_merged['Edu_Head'] = pd.to_numeric(df_merged['b3q6'], errors='coerce').fillna(0)
+    # Sex: 1 = Male, 2 = Female. We create a binary Is_Female_Head feature.
+    df_merged['Is_Female_Head'] = (pd.to_numeric(df_merged['b3q4'], errors='coerce') == 2).astype(int)
     
     # Adding HH Characteristics
     df_merged['HH_Size'] = pd.to_numeric(df_merged['b4q1'], errors='coerce').fillna(1)
@@ -118,12 +123,13 @@ def process_nsso_data():
     # Social Group: 9 = General/Upper (Privileged), 1/2/3 = ST/SC/OBC (Marginalized)
     df_merged['Is_Marginalized_Caste'] = (pd.to_numeric(df_merged['b4q3'], errors='coerce') != 9).astype(int)
     
-    features.extend(['Age_Head', 'Edu_Head', 'HH_Size', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'HH_Type', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets'])
+    features.extend(['Is_Female_Head', 'Age_Head', 'Edu_Head', 'HH_Size', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'HH_Type', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets'])
     
     df_final = df_merged[features].copy()
     
     print(f"Final dataset shape: {df_final.shape}")
     print(f"Rural Household Count (Raw): {df_final['Is_Rural'].sum()}")
+    print(f"Households in Credit Market (Raw): {df_final['In_Credit_Market'].sum()}")
     print(f"Institutional Loan Holders (Raw): {df_final['Is_Institutional'].sum()}")
     print(f"Total Scaled Population Represented: {df_final['MLT'].sum():.0f}")
     
