@@ -1,0 +1,732 @@
+{
+  "source": {
+    "nesstar_path": "/Users/aakashsangani/Desktop/CreditAudit/Round77sch18pt2Data/NSS77_18pt2study.Nesstar"
+  },
+  "dataset": {
+    "dataset_number": 3,
+    "file_id": "dataset_03",
+    "file_name": "Visit1  Level - 03 (Block 4) - Household characteristics.NSDstat",
+    "record_count": 116461,
+    "var_count": 36
+  },
+  "variables": [
+    {
+      "name": "HHID",
+      "variable_id": 277,
+      "width_value": 9,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Common Primary Key for household identification",
+        "label_resource_id": 368,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SchID",
+      "variable_id": 244,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule ID",
+        "label_resource_id": 311,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FSU_Slno",
+      "variable_id": 245,
+      "width_value": 5,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FSU Serial No.",
+        "label_resource_id": 313,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Round",
+      "variable_id": 246,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Round",
+        "label_resource_id": 315,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Schedule",
+      "variable_id": 247,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule",
+        "label_resource_id": 317,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sample",
+      "variable_id": 248,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample",
+        "label_resource_id": 319,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sector",
+      "variable_id": 249,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sector",
+        "label_resource_id": 321,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSS_Region",
+      "variable_id": 250,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "NSS-Region",
+        "label_resource_id": 323,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "State",
+      "variable_id": 278,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State",
+        "label_resource_id": 370,
+        "category_resource_id": 2220,
+        "categories": [
+          {
+            "value": "01",
+            "label": "JAMMU & KASHMIR"
+          },
+          {
+            "value": "02",
+            "label": "HIMACHAL PRADESH"
+          },
+          {
+            "value": "03",
+            "label": "PUNJAB"
+          },
+          {
+            "value": "04",
+            "label": "CHANDIGARH"
+          },
+          {
+            "value": "05",
+            "label": "UTTARAKHAND"
+          },
+          {
+            "value": "06",
+            "label": "HARYANA"
+          },
+          {
+            "value": "07",
+            "label": "DELHI"
+          },
+          {
+            "value": "08",
+            "label": "RAJASTHAN"
+          },
+          {
+            "value": "09",
+            "label": "UTTAR PRADESH"
+          },
+          {
+            "value": "10",
+            "label": "BIHAR"
+          },
+          {
+            "value": "11",
+            "label": "SIKKIM"
+          },
+          {
+            "value": "12",
+            "label": "ARUNACHAL PRADESH"
+          },
+          {
+            "value": "13",
+            "label": "NAGALAND"
+          },
+          {
+            "value": "14",
+            "label": "MANIPUR"
+          },
+          {
+            "value": "15",
+            "label": "MIZORAM"
+          },
+          {
+            "value": "16",
+            "label": "TRIPURA"
+          },
+          {
+            "value": "17",
+            "label": "MEGHALAYA"
+          },
+          {
+            "value": "18",
+            "label": "ASSAM"
+          },
+          {
+            "value": "19",
+            "label": "WEST BENGAL"
+          },
+          {
+            "value": "20",
+            "label": "JHARKHAND"
+          },
+          {
+            "value": "21",
+            "label": "ODISHA"
+          },
+          {
+            "value": "22",
+            "label": "CHHATTISGARH"
+          },
+          {
+            "value": "23",
+            "label": "MADHYA PRADESH"
+          },
+          {
+            "value": "24",
+            "label": "GUJARAT"
+          },
+          {
+            "value": "25",
+            "label": "DAMAN & DIU"
+          },
+          {
+            "value": "26",
+            "label": "D & N HAVELI"
+          },
+          {
+            "value": "27",
+            "label": "MAHARASHTRA"
+          },
+          {
+            "value": "28",
+            "label": "ANDHRA PRADESH"
+          },
+          {
+            "value": "29",
+            "label": "KARNATAKA"
+          },
+          {
+            "value": "30",
+            "label": "GOA"
+          },
+          {
+            "value": "31",
+            "label": "LAKSHADWEEP"
+          },
+          {
+            "value": "32",
+            "label": "KERALA"
+          },
+          {
+            "value": "33",
+            "label": "TAMIL NADU"
+          },
+          {
+            "value": "34",
+            "label": "PUDUCHERRY"
+          },
+          {
+            "value": "35",
+            "label": "A & N ISLANDS"
+          },
+          {
+            "value": "36",
+            "label": "TELANGANA"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State_District",
+      "variable_id": 279,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State_District",
+        "label_resource_id": 372,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "District",
+      "variable_id": 251,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "District",
+        "label_resource_id": 325,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Stratum",
+      "variable_id": 252,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Stratum",
+        "label_resource_id": 327,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubStratumNo",
+      "variable_id": 253,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Stratum",
+        "label_resource_id": 329,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubRound",
+      "variable_id": 254,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Round",
+        "label_resource_id": 331,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FODSubRegion",
+      "variable_id": 255,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FOD Sub-Region",
+        "label_resource_id": 333,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SSS",
+      "variable_id": 256,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Second-stage-stratum no.",
+        "label_resource_id": 335,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "hh_no",
+      "variable_id": 257,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample hhld. No.",
+        "label_resource_id": 337,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "visitNo",
+      "variable_id": 258,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Visit number",
+        "label_resource_id": 339,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Level",
+      "variable_id": 259,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Level",
+        "label_resource_id": 341,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q1",
+      "variable_id": 260,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "Household size",
+        "label_resource_id": 342,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q2",
+      "variable_id": 261,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "religion",
+        "label_resource_id": 344,
+        "category_resource_id": 2214,
+        "categories": [
+          {
+            "value": "1",
+            "label": "Hinduism"
+          },
+          {
+            "value": "2",
+            "label": "Islam"
+          },
+          {
+            "value": "3",
+            "label": "Christianity"
+          },
+          {
+            "value": "4",
+            "label": "Sikhism"
+          },
+          {
+            "value": "5",
+            "label": "Jainism"
+          },
+          {
+            "value": "6",
+            "label": "Buddhism"
+          },
+          {
+            "value": "7",
+            "label": "Zoroastrianism"
+          },
+          {
+            "value": "9",
+            "label": "other"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b4q3",
+      "variable_id": 262,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "Social group",
+        "label_resource_id": 346,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q4",
+      "variable_id": 263,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "Household type",
+        "label_resource_id": 348,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q5",
+      "variable_id": 264,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "area of homestead land possessed as on date (acres 0.00)",
+        "label_resource_id": 349,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q6dot1",
+      "variable_id": 265,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "owned and possessed (acres 0.00)",
+        "label_resource_id": 350,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q6dot2",
+      "variable_id": 266,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "leased in (acres 0.00)",
+        "label_resource_id": 351,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q6dot3",
+      "variable_id": 267,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "otherwise possessed (acres 0.00)",
+        "label_resource_id": 352,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q6dot4",
+      "variable_id": 268,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "leased out (acres 0.00)",
+        "label_resource_id": 353,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q7",
+      "variable_id": 269,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "whether operated any land for agricultural activities during last 365 days",
+        "label_resource_id": 355,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q8dot1",
+      "variable_id": 270,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "area operated by the household (acres 0.00)",
+        "label_resource_id": 356,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q8dot2",
+      "variable_id": 271,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "area operated under kitchen garden (acres 0.00)",
+        "label_resource_id": 357,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q9dot1",
+      "variable_id": 272,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+        "label_resource_id": 359,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q9dot2",
+      "variable_id": 273,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+        "label_resource_id": 361,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b4q9dot3",
+      "variable_id": 274,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Atal Pension Yojana (APY)",
+        "label_resource_id": 363,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSC",
+      "variable_id": 275,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "NSC",
+        "label_resource_id": 365,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "MLT",
+      "variable_id": 276,
+      "width_value": 10,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Multiplier",
+        "label_resource_id": 366,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    }
+  ]
+}
