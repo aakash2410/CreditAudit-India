@@ -1,0 +1,826 @@
+{
+  "source": {
+    "nesstar_path": "/Users/aakashsangani/Desktop/CreditAudit/Round77sch18pt2Data/NSS77_18pt2study.Nesstar"
+  },
+  "dataset": {
+    "dataset_number": 2,
+    "file_id": "dataset_02",
+    "file_name": "Visit1  Level - 02 (Block 3) - Demographic and other particulars of household members.NSDstat",
+    "record_count": 495573,
+    "var_count": 37
+  },
+  "variables": [
+    {
+      "name": "HHID",
+      "variable_id": 159,
+      "width_value": 9,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Common Primary Key for household identification",
+        "label_resource_id": 232,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SchID",
+      "variable_id": 125,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule ID",
+        "label_resource_id": 166,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FSU_Slno",
+      "variable_id": 126,
+      "width_value": 5,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FSU Serial No.",
+        "label_resource_id": 168,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Round",
+      "variable_id": 127,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Round",
+        "label_resource_id": 170,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Schedule",
+      "variable_id": 128,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule",
+        "label_resource_id": 172,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sample",
+      "variable_id": 129,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample",
+        "label_resource_id": 174,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sector",
+      "variable_id": 130,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sector",
+        "label_resource_id": 176,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSS_Region",
+      "variable_id": 131,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "NSS-Region",
+        "label_resource_id": 178,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "State",
+      "variable_id": 160,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State",
+        "label_resource_id": 234,
+        "category_resource_id": 2219,
+        "categories": [
+          {
+            "value": "01",
+            "label": "JAMMU & KASHMIR"
+          },
+          {
+            "value": "02",
+            "label": "HIMACHAL PRADESH"
+          },
+          {
+            "value": "03",
+            "label": "PUNJAB"
+          },
+          {
+            "value": "04",
+            "label": "CHANDIGARH"
+          },
+          {
+            "value": "05",
+            "label": "UTTARAKHAND"
+          },
+          {
+            "value": "06",
+            "label": "HARYANA"
+          },
+          {
+            "value": "07",
+            "label": "DELHI"
+          },
+          {
+            "value": "08",
+            "label": "RAJASTHAN"
+          },
+          {
+            "value": "09",
+            "label": "UTTAR PRADESH"
+          },
+          {
+            "value": "10",
+            "label": "BIHAR"
+          },
+          {
+            "value": "11",
+            "label": "SIKKIM"
+          },
+          {
+            "value": "12",
+            "label": "ARUNACHAL PRADESH"
+          },
+          {
+            "value": "13",
+            "label": "NAGALAND"
+          },
+          {
+            "value": "14",
+            "label": "MANIPUR"
+          },
+          {
+            "value": "15",
+            "label": "MIZORAM"
+          },
+          {
+            "value": "16",
+            "label": "TRIPURA"
+          },
+          {
+            "value": "17",
+            "label": "MEGHALAYA"
+          },
+          {
+            "value": "18",
+            "label": "ASSAM"
+          },
+          {
+            "value": "19",
+            "label": "WEST BENGAL"
+          },
+          {
+            "value": "20",
+            "label": "JHARKHAND"
+          },
+          {
+            "value": "21",
+            "label": "ODISHA"
+          },
+          {
+            "value": "22",
+            "label": "CHHATTISGARH"
+          },
+          {
+            "value": "23",
+            "label": "MADHYA PRADESH"
+          },
+          {
+            "value": "24",
+            "label": "GUJARAT"
+          },
+          {
+            "value": "25",
+            "label": "DAMAN & DIU"
+          },
+          {
+            "value": "26",
+            "label": "D & N HAVELI"
+          },
+          {
+            "value": "27",
+            "label": "MAHARASHTRA"
+          },
+          {
+            "value": "28",
+            "label": "ANDHRA PRADESH"
+          },
+          {
+            "value": "29",
+            "label": "KARNATAKA"
+          },
+          {
+            "value": "30",
+            "label": "GOA"
+          },
+          {
+            "value": "31",
+            "label": "LAKSHADWEEP"
+          },
+          {
+            "value": "32",
+            "label": "KERALA"
+          },
+          {
+            "value": "33",
+            "label": "TAMIL NADU"
+          },
+          {
+            "value": "34",
+            "label": "PUDUCHERRY"
+          },
+          {
+            "value": "35",
+            "label": "A & N ISLANDS"
+          },
+          {
+            "value": "36",
+            "label": "TELANGANA"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State_District",
+      "variable_id": 161,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State_District",
+        "label_resource_id": 236,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "District",
+      "variable_id": 132,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "District",
+        "label_resource_id": 180,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Stratum",
+      "variable_id": 133,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Stratum",
+        "label_resource_id": 182,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubStratumNo",
+      "variable_id": 134,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Stratum",
+        "label_resource_id": 184,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubRound",
+      "variable_id": 135,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Round",
+        "label_resource_id": 186,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FODSubRegion",
+      "variable_id": 136,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FOD Sub-Region",
+        "label_resource_id": 188,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SSS",
+      "variable_id": 137,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Second-stage-stratum no.",
+        "label_resource_id": 190,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "hh_no",
+      "variable_id": 138,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample hhld. No.",
+        "label_resource_id": 192,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "visitNo",
+      "variable_id": 139,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Visit number",
+        "label_resource_id": 194,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Level",
+      "variable_id": 140,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Level",
+        "label_resource_id": 196,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q1",
+      "variable_id": 141,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Person serial no.",
+        "label_resource_id": 198,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q3",
+      "variable_id": 142,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Relation to head",
+        "label_resource_id": 200,
+        "category_resource_id": 2210,
+        "categories": [
+          {
+            "value": "1",
+            "label": "self"
+          },
+          {
+            "value": "2",
+            "label": "spouse of head"
+          },
+          {
+            "value": "3",
+            "label": "married child"
+          },
+          {
+            "value": "4",
+            "label": "spouse of married child"
+          },
+          {
+            "value": "5",
+            "label": "unmarried child"
+          },
+          {
+            "value": "6",
+            "label": "grand child"
+          },
+          {
+            "value": "7",
+            "label": "father/mother/father-in-law/mother-in-law"
+          },
+          {
+            "value": "8",
+            "label": "brother/sister/brother-in-law/sister-in-law/other relatives"
+          },
+          {
+            "value": "9",
+            "label": "servant/employees/other non-relatives"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b3q4",
+      "variable_id": 143,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Gender",
+        "label_resource_id": 202,
+        "category_resource_id": 2211,
+        "categories": [
+          {
+            "value": "1",
+            "label": "male"
+          },
+          {
+            "value": "2",
+            "label": "female"
+          },
+          {
+            "value": "3",
+            "label": "transgender"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b3q5",
+      "variable_id": 144,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 0,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "Age",
+        "label_resource_id": 203,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q6",
+      "variable_id": 145,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Highest educational level attained",
+        "label_resource_id": 205,
+        "category_resource_id": 2212,
+        "categories": [
+          {
+            "value": "01",
+            "label": "not literate"
+          },
+          {
+            "value": "02",
+            "label": "literate: below primary"
+          },
+          {
+            "value": "03",
+            "label": "primary"
+          },
+          {
+            "value": "04",
+            "label": "upper primary/middle"
+          },
+          {
+            "value": "05",
+            "label": "secondary"
+          },
+          {
+            "value": "06",
+            "label": "higher secondary"
+          },
+          {
+            "value": "07",
+            "label": "diploma/certificate course(upto secondary)"
+          },
+          {
+            "value": "08",
+            "label": "diploma/certificate course(higher secondary)"
+          },
+          {
+            "value": "10",
+            "label": "diploma/certificate course(graduation & above)"
+          },
+          {
+            "value": "11",
+            "label": "graduate"
+          },
+          {
+            "value": "12",
+            "label": "post graduate and above"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b3q7",
+      "variable_id": 146,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Holding deposit account in Commercial bank/RRB/Co-op bank",
+        "label_resource_id": 207,
+        "category_resource_id": 2213,
+        "categories": [
+          {
+            "value": "1",
+            "label": "yes with banking services taken from bank branch"
+          },
+          {
+            "value": "2",
+            "label": "yes with banking services taken from bank mitra"
+          },
+          {
+            "value": "3",
+            "label": "yes with banking services taken from bank branch & bank mitra"
+          },
+          {
+            "value": "4",
+            "label": "no account"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b3q8",
+      "variable_id": 147,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Holding deposit account in Post Office",
+        "label_resource_id": 209,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q9",
+      "variable_id": 148,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "Holding deposit account in Non-Banking Financial Company",
+        "label_resource_id": 211,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q10",
+      "variable_id": 149,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether contributing to any Co-op Credit society/SHG/JLG",
+        "label_resource_id": 213,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q11",
+      "variable_id": 150,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether having any deposit in non-instt. Agency",
+        "label_resource_id": 215,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q12",
+      "variable_id": 151,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether owns any land",
+        "label_resource_id": 217,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q13",
+      "variable_id": 152,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether owns any agricultural land",
+        "label_resource_id": 219,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q14",
+      "variable_id": 153,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether holding a credit/debit card",
+        "label_resource_id": 221,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q15",
+      "variable_id": 154,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether used during last 365 days",
+        "label_resource_id": 223,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q16",
+      "variable_id": 155,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether having an e-wallet",
+        "label_resource_id": 225,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b3q17",
+      "variable_id": 156,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Whether used during last 365 days",
+        "label_resource_id": 227,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSC",
+      "variable_id": 157,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "NSC",
+        "label_resource_id": 229,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "MLT",
+      "variable_id": 158,
+      "width_value": 10,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Multiplier",
+        "label_resource_id": 230,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    }
+  ]
+}

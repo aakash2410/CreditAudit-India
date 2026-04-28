@@ -1,0 +1,852 @@
+{
+  "source": {
+    "nesstar_path": "/Users/aakashsangani/Desktop/CreditAudit/Round77sch18pt2Data/NSS77_18pt2study.Nesstar"
+  },
+  "dataset": {
+    "dataset_number": 14,
+    "file_id": "dataset_14",
+    "file_name": "Visit1  Level - 14 (Block 12) - particulars of cash loans payable by the household to institutional, non-institutional agencies as on the date of survey and transactions of loans.NSDstat",
+    "record_count": 178971,
+    "var_count": 36
+  },
+  "variables": [
+    {
+      "name": "HHID",
+      "variable_id": 1138,
+      "width_value": 9,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Common Primary Key for household identification",
+        "label_resource_id": 1288,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SchID",
+      "variable_id": 1105,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule ID",
+        "label_resource_id": 1230,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FSU_Slno",
+      "variable_id": 1106,
+      "width_value": 5,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FSU Serial No.",
+        "label_resource_id": 1232,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Round",
+      "variable_id": 1107,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Round",
+        "label_resource_id": 1234,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Schedule",
+      "variable_id": 1108,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule",
+        "label_resource_id": 1236,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sample",
+      "variable_id": 1109,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample",
+        "label_resource_id": 1238,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sector",
+      "variable_id": 1110,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sector",
+        "label_resource_id": 1240,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSS_Region",
+      "variable_id": 1111,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "NSS-Region",
+        "label_resource_id": 1242,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "State",
+      "variable_id": 1139,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State",
+        "label_resource_id": 1290,
+        "category_resource_id": 2231,
+        "categories": [
+          {
+            "value": "01",
+            "label": "JAMMU & KASHMIR"
+          },
+          {
+            "value": "02",
+            "label": "HIMACHAL PRADESH"
+          },
+          {
+            "value": "03",
+            "label": "PUNJAB"
+          },
+          {
+            "value": "04",
+            "label": "CHANDIGARH"
+          },
+          {
+            "value": "05",
+            "label": "UTTARAKHAND"
+          },
+          {
+            "value": "06",
+            "label": "HARYANA"
+          },
+          {
+            "value": "07",
+            "label": "DELHI"
+          },
+          {
+            "value": "08",
+            "label": "RAJASTHAN"
+          },
+          {
+            "value": "09",
+            "label": "UTTAR PRADESH"
+          },
+          {
+            "value": "10",
+            "label": "BIHAR"
+          },
+          {
+            "value": "11",
+            "label": "SIKKIM"
+          },
+          {
+            "value": "12",
+            "label": "ARUNACHAL PRADESH"
+          },
+          {
+            "value": "13",
+            "label": "NAGALAND"
+          },
+          {
+            "value": "14",
+            "label": "MANIPUR"
+          },
+          {
+            "value": "15",
+            "label": "MIZORAM"
+          },
+          {
+            "value": "16",
+            "label": "TRIPURA"
+          },
+          {
+            "value": "17",
+            "label": "MEGHALAYA"
+          },
+          {
+            "value": "18",
+            "label": "ASSAM"
+          },
+          {
+            "value": "19",
+            "label": "WEST BENGAL"
+          },
+          {
+            "value": "20",
+            "label": "JHARKHAND"
+          },
+          {
+            "value": "21",
+            "label": "ODISHA"
+          },
+          {
+            "value": "22",
+            "label": "CHHATTISGARH"
+          },
+          {
+            "value": "23",
+            "label": "MADHYA PRADESH"
+          },
+          {
+            "value": "24",
+            "label": "GUJARAT"
+          },
+          {
+            "value": "25",
+            "label": "DAMAN & DIU"
+          },
+          {
+            "value": "26",
+            "label": "D & N HAVELI"
+          },
+          {
+            "value": "27",
+            "label": "MAHARASHTRA"
+          },
+          {
+            "value": "28",
+            "label": "ANDHRA PRADESH"
+          },
+          {
+            "value": "29",
+            "label": "KARNATAKA"
+          },
+          {
+            "value": "30",
+            "label": "GOA"
+          },
+          {
+            "value": "31",
+            "label": "LAKSHADWEEP"
+          },
+          {
+            "value": "32",
+            "label": "KERALA"
+          },
+          {
+            "value": "33",
+            "label": "TAMIL NADU"
+          },
+          {
+            "value": "34",
+            "label": "PUDUCHERRY"
+          },
+          {
+            "value": "35",
+            "label": "A & N ISLANDS"
+          },
+          {
+            "value": "36",
+            "label": "TELANGANA"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State_District",
+      "variable_id": 1140,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State_District",
+        "label_resource_id": 1292,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "District",
+      "variable_id": 1112,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "District",
+        "label_resource_id": 1244,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Stratum",
+      "variable_id": 1113,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Stratum",
+        "label_resource_id": 1246,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubStratumNo",
+      "variable_id": 1114,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Stratum",
+        "label_resource_id": 1248,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubRound",
+      "variable_id": 1115,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Round",
+        "label_resource_id": 1250,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FODSubRegion",
+      "variable_id": 1116,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FOD Sub-Region",
+        "label_resource_id": 1252,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SSS",
+      "variable_id": 1117,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Second-stage-stratum no.",
+        "label_resource_id": 1254,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "hh_no",
+      "variable_id": 1118,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample hhld. No.",
+        "label_resource_id": 1256,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "visitNo",
+      "variable_id": 1119,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Visit number",
+        "label_resource_id": 1258,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Level",
+      "variable_id": 1120,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Level",
+        "label_resource_id": 1260,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q1",
+      "variable_id": 1121,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Serial no.",
+        "label_resource_id": 1262,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q2",
+      "variable_id": 1122,
+      "width_value": 4,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1983,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "year of borrowing",
+        "label_resource_id": 1263,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q3",
+      "variable_id": 1123,
+      "width_value": 1,
+      "mode_code": 5,
+      "value_format_code": 2,
+      "value_offset_i64": 1,
+      "value_family": "nibble-packed",
+      "embedded": {
+        "label": "whether loan remained unpaid on 30.6.2018",
+        "label_resource_id": 1265,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q4",
+      "variable_id": 1124,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 6,
+      "value_offset_i64": 0,
+      "value_family": "uint32",
+      "embedded": {
+        "label": "amount borrowed originally (Rs.)",
+        "label_resource_id": 1266,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q5",
+      "variable_id": 1125,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "credit agency",
+        "label_resource_id": 1268,
+        "category_resource_id": 2244,
+        "categories": [
+          {
+            "value": "01",
+            "label": "scheduled commercial bank"
+          },
+          {
+            "value": "02",
+            "label": "regional rural bank"
+          },
+          {
+            "value": "03",
+            "label": "co-operative society"
+          },
+          {
+            "value": "04",
+            "label": "co-operative bank"
+          },
+          {
+            "value": "05",
+            "label": "insurance companies"
+          },
+          {
+            "value": "06",
+            "label": "provident fund"
+          },
+          {
+            "value": "07",
+            "label": "employer"
+          },
+          {
+            "value": "08",
+            "label": "financial corporation/institution"
+          },
+          {
+            "value": "10",
+            "label": "NBFC's including micro-financing institution(MFIs)"
+          },
+          {
+            "value": "11",
+            "label": "bank linked SHG/JLG"
+          },
+          {
+            "value": "12",
+            "label": "non-bank linked SHG/JLG"
+          },
+          {
+            "value": "13",
+            "label": "other institutional agencies"
+          },
+          {
+            "value": "14",
+            "label": "landlord"
+          },
+          {
+            "value": "15",
+            "label": "agricultural moneylender"
+          },
+          {
+            "value": "16",
+            "label": "professional moneylender"
+          },
+          {
+            "value": "17",
+            "label": "input supplier"
+          },
+          {
+            "value": "18",
+            "label": "relatives and friends"
+          },
+          {
+            "value": "19",
+            "label": "chit fund"
+          },
+          {
+            "value": "20",
+            "label": "market commission agent/traders"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b12q6",
+      "variable_id": 1126,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "scheme of lending",
+        "label_resource_id": 1270,
+        "category_resource_id": 2245,
+        "categories": [
+          {
+            "value": "1",
+            "label": "Mudra"
+          },
+          {
+            "value": "2",
+            "label": "Stand-Up India scheme"
+          },
+          {
+            "value": "3",
+            "label": "NRLM/NULM(National Rural/Urban Livelihood Mission)"
+          },
+          {
+            "value": "4",
+            "label": "other central govt schemes"
+          },
+          {
+            "value": "5",
+            "label": "exclusive state scheme"
+          },
+          {
+            "value": "6",
+            "label": "exclusive bank scheme"
+          },
+          {
+            "value": "7",
+            "label": "kisan credit card"
+          },
+          {
+            "value": "8",
+            "label": "crop loan/ other agricultural loan"
+          },
+          {
+            "value": "9",
+            "label": "not covered under any scheme"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b12q7",
+      "variable_id": 1127,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "tenure of loan",
+        "label_resource_id": 1272,
+        "category_resource_id": 2246,
+        "categories": [
+          {
+            "value": "1",
+            "label": "short-term (less than 1 year)"
+          },
+          {
+            "value": "2",
+            "label": "medium term (1 to 3 year)"
+          },
+          {
+            "value": "3",
+            "label": "long-term (3 year or more)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b12q8",
+      "variable_id": 1128,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "nature of interest",
+        "label_resource_id": 1274,
+        "category_resource_id": 2247,
+        "categories": [
+          {
+            "value": "1",
+            "label": "interest free"
+          },
+          {
+            "value": "2",
+            "label": "simple"
+          },
+          {
+            "value": "3",
+            "label": "compound"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b12q9",
+      "variable_id": 1129,
+      "width_value": 6,
+      "mode_code": 5,
+      "value_format_code": 10,
+      "value_offset_i64": 0,
+      "value_family": "float64",
+      "embedded": {
+        "label": "annual rate of interest (0.00)",
+        "label_resource_id": 1275,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q10",
+      "variable_id": 1130,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "purpose of loan",
+        "label_resource_id": 1277,
+        "category_resource_id": 2248,
+        "categories": [
+          {
+            "value": "1",
+            "label": "interest free"
+          },
+          {
+            "value": "2",
+            "label": "simple"
+          },
+          {
+            "value": "3",
+            "label": "compound"
+          }
+        ]
+      }
+    },
+    {
+      "name": "b12q11",
+      "variable_id": 1131,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "whether the loan is secured",
+        "label_resource_id": 1279,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q12",
+      "variable_id": 1132,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 6,
+      "value_offset_i64": 0,
+      "value_family": "uint32",
+      "embedded": {
+        "label": "amount (Rs.) repaid (including interest) during 01.07.2018 to date of survey",
+        "label_resource_id": 1280,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q13",
+      "variable_id": 1133,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "amount (Rs.) written off (including interest) during 01.07.2018 to date of survey",
+        "label_resource_id": 1281,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q14",
+      "variable_id": 1134,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 6,
+      "value_offset_i64": 0,
+      "value_family": "uint32",
+      "embedded": {
+        "label": "amount (Rs.) outstanding (including interest) as on date of survey",
+        "label_resource_id": 1282,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b12q15",
+      "variable_id": 1135,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 6,
+      "value_offset_i64": 0,
+      "value_family": "uint32",
+      "embedded": {
+        "label": "amount (Rs.) outstanding (including interest) as on 30.06.2018",
+        "label_resource_id": 1283,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSC",
+      "variable_id": 1136,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "NSC",
+        "label_resource_id": 1285,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "MLT",
+      "variable_id": 1137,
+      "width_value": 10,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Multiplier",
+        "label_resource_id": 1286,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    }
+  ]
+}

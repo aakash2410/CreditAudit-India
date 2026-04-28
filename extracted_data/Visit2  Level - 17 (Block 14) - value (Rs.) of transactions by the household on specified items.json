@@ -1,0 +1,579 @@
+{
+  "source": {
+    "nesstar_path": "/Users/aakashsangani/Desktop/CreditAudit/Round77sch18pt2Data/NSS77_18pt2study.Nesstar"
+  },
+  "dataset": {
+    "dataset_number": 24,
+    "file_id": "dataset_24",
+    "file_name": "Visit2  Level - 17 (Block 14) - value (Rs.) of transactions by the household on specified items.NSDstat",
+    "record_count": 59291,
+    "var_count": 28
+  },
+  "variables": [
+    {
+      "name": "HHID",
+      "variable_id": 1984,
+      "width_value": 9,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Common Primary Key for household identification",
+        "label_resource_id": 2060,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SchID",
+      "variable_id": 1959,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule ID",
+        "label_resource_id": 2062,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FSU_Slno",
+      "variable_id": 1960,
+      "width_value": 5,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FSU Serial No.",
+        "label_resource_id": 2064,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Round",
+      "variable_id": 1961,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Round",
+        "label_resource_id": 2066,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Schedule",
+      "variable_id": 1962,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Schedule",
+        "label_resource_id": 2068,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sample",
+      "variable_id": 1963,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample",
+        "label_resource_id": 2070,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Sector",
+      "variable_id": 1964,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sector",
+        "label_resource_id": 2072,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSS_Region",
+      "variable_id": 1965,
+      "width_value": 3,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "NSS-Region",
+        "label_resource_id": 2074,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "State",
+      "variable_id": 1985,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State",
+        "label_resource_id": 2076,
+        "category_resource_id": 2238,
+        "categories": [
+          {
+            "value": "01",
+            "label": "JAMMU & KASHMIR"
+          },
+          {
+            "value": "02",
+            "label": "HIMACHAL PRADESH"
+          },
+          {
+            "value": "03",
+            "label": "PUNJAB"
+          },
+          {
+            "value": "04",
+            "label": "CHANDIGARH"
+          },
+          {
+            "value": "05",
+            "label": "UTTARAKHAND"
+          },
+          {
+            "value": "06",
+            "label": "HARYANA"
+          },
+          {
+            "value": "07",
+            "label": "DELHI"
+          },
+          {
+            "value": "08",
+            "label": "RAJASTHAN"
+          },
+          {
+            "value": "09",
+            "label": "UTTAR PRADESH"
+          },
+          {
+            "value": "10",
+            "label": "BIHAR"
+          },
+          {
+            "value": "11",
+            "label": "SIKKIM"
+          },
+          {
+            "value": "12",
+            "label": "ARUNACHAL PRADESH"
+          },
+          {
+            "value": "13",
+            "label": "NAGALAND"
+          },
+          {
+            "value": "14",
+            "label": "MANIPUR"
+          },
+          {
+            "value": "15",
+            "label": "MIZORAM"
+          },
+          {
+            "value": "16",
+            "label": "TRIPURA"
+          },
+          {
+            "value": "17",
+            "label": "MEGHALAYA"
+          },
+          {
+            "value": "18",
+            "label": "ASSAM"
+          },
+          {
+            "value": "19",
+            "label": "WEST BENGAL"
+          },
+          {
+            "value": "20",
+            "label": "JHARKHAND"
+          },
+          {
+            "value": "21",
+            "label": "ODISHA"
+          },
+          {
+            "value": "22",
+            "label": "CHHATTISGARH"
+          },
+          {
+            "value": "23",
+            "label": "MADHYA PRADESH"
+          },
+          {
+            "value": "24",
+            "label": "GUJARAT"
+          },
+          {
+            "value": "25",
+            "label": "DAMAN & DIU"
+          },
+          {
+            "value": "26",
+            "label": "D & N HAVELI"
+          },
+          {
+            "value": "27",
+            "label": "MAHARASHTRA"
+          },
+          {
+            "value": "28",
+            "label": "ANDHRA PRADESH"
+          },
+          {
+            "value": "29",
+            "label": "KARNATAKA"
+          },
+          {
+            "value": "30",
+            "label": "GOA"
+          },
+          {
+            "value": "31",
+            "label": "LAKSHADWEEP"
+          },
+          {
+            "value": "32",
+            "label": "KERALA"
+          },
+          {
+            "value": "33",
+            "label": "TAMIL NADU"
+          },
+          {
+            "value": "34",
+            "label": "PUDUCHERRY"
+          },
+          {
+            "value": "35",
+            "label": "A & N ISLANDS"
+          },
+          {
+            "value": "36",
+            "label": "TELANGANA"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State_District",
+      "variable_id": 1986,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "State_District",
+        "label_resource_id": 2078,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "District",
+      "variable_id": 1966,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "District",
+        "label_resource_id": 2080,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Stratum",
+      "variable_id": 1967,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Stratum",
+        "label_resource_id": 2082,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubStratumNo",
+      "variable_id": 1968,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Stratum",
+        "label_resource_id": 2084,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SubRound",
+      "variable_id": 1969,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sub-Round",
+        "label_resource_id": 2086,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "FODSubRegion",
+      "variable_id": 1970,
+      "width_value": 4,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "FOD Sub-Region",
+        "label_resource_id": 2088,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "SSS",
+      "variable_id": 1971,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Second-stage-stratum no.",
+        "label_resource_id": 2090,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "hh_no",
+      "variable_id": 1972,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Sample hhld. No.",
+        "label_resource_id": 2092,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "visitNo",
+      "variable_id": 1973,
+      "width_value": 1,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Visit number",
+        "label_resource_id": 2094,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "Level",
+      "variable_id": 1974,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Level",
+        "label_resource_id": 2096,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q2",
+      "variable_id": 1975,
+      "width_value": 2,
+      "mode_code": 1,
+      "value_format_code": 2,
+      "value_offset_i64": 0,
+      "value_family": null,
+      "embedded": {
+        "label": "Serial no.",
+        "label_resource_id": 2098,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q9",
+      "variable_id": 1976,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Financed - Institutional (Rs.)",
+        "label_resource_id": 2099,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q10",
+      "variable_id": 1977,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Financed - Non-Institutional (Rs.)",
+        "label_resource_id": 2100,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q11",
+      "variable_id": 1978,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Value - Sale (Rs.)",
+        "label_resource_id": 2101,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q12",
+      "variable_id": 1979,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Value - Disposal/loss (Rs.)",
+        "label_resource_id": 2102,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q13",
+      "variable_id": 1980,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 0,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Value - Total (Rs.)",
+        "label_resource_id": 2103,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "b14q14",
+      "variable_id": 1981,
+      "width_value": 12,
+      "mode_code": 5,
+      "value_format_code": 6,
+      "value_offset_i64": -7300000,
+      "value_family": "uint32",
+      "embedded": {
+        "label": "net addition (Rs.)",
+        "label_resource_id": 2104,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "NSC",
+      "variable_id": 1982,
+      "width_value": 3,
+      "mode_code": 5,
+      "value_format_code": 3,
+      "value_offset_i64": 1,
+      "value_family": "byte-coded",
+      "embedded": {
+        "label": "NSC",
+        "label_resource_id": 2106,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    },
+    {
+      "name": "MLT",
+      "variable_id": 1983,
+      "width_value": 10,
+      "mode_code": 5,
+      "value_format_code": 5,
+      "value_offset_i64": 400,
+      "value_family": "uint24",
+      "embedded": {
+        "label": "Multiplier",
+        "label_resource_id": 2107,
+        "category_resource_id": 0,
+        "categories": []
+      }
+    }
+  ]
+}
