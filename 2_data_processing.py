@@ -111,10 +111,23 @@ def process_nsso_data():
     # Sex: 1 = Male, 2 = Female. We create a binary Is_Female_Head feature.
     df_merged['Is_Female_Head'] = (pd.to_numeric(df_merged['b3q4'], errors='coerce') == 2).astype(int)
     
+    # Advanced Feature Engineering: Binning
+    df_merged['Age_Group_Young'] = (df_merged['Age_Head'] < 30).astype(int)
+    df_merged['Age_Group_Senior'] = (df_merged['Age_Head'] >= 60).astype(int)
+    # (Prime earning age is baseline when both are 0)
+
+    
     # Adding HH Characteristics
     df_merged['HH_Size'] = pd.to_numeric(df_merged['b4q1'], errors='coerce').fillna(1)
+    df_merged['HH_Size'] = df_merged['HH_Size'].replace(0, 1) # Prevent div by zero
     df_merged['HH_Type'] = pd.to_numeric(df_merged['b4q4'], errors='coerce').fillna(9)
     df_merged['Land_Possessed'] = pd.to_numeric(df_merged['b4q5'], errors='coerce').fillna(0)
+    
+    # Advanced Feature Engineering: Per-Capita and Zero Indicators
+    df_merged['Per_Capita_Physical'] = df_merged['Total_Physical_Assets'] / df_merged['HH_Size']
+    df_merged['Per_Capita_Financial'] = df_merged['Financial_Assets'] / df_merged['HH_Size']
+    df_merged['Has_Zero_Land'] = (df_merged['Land_Possessed'] == 0).astype(int)
+    df_merged['Has_Zero_Financial'] = (df_merged['Financial_Assets'] == 0).astype(int)
     
     # Create Binary Protected Attributes for AIF360 Debiasing
     # Religion: 'Hinduism' = Privileged Majority (0), others = Minority (1)
@@ -123,7 +136,12 @@ def process_nsso_data():
     # Social Group: 9 = General/Upper (Privileged), 1/2/3 = ST/SC/OBC (Marginalized)
     df_merged['Is_Marginalized_Caste'] = (pd.to_numeric(df_merged['b4q3'], errors='coerce') != 9).astype(int)
     
-    features.extend(['Is_Female_Head', 'Age_Head', 'Edu_Head', 'HH_Size', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'HH_Type', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets'])
+    features.extend([
+        'Is_Female_Head', 'Age_Head', 'Edu_Head', 'HH_Size', 'Is_Minority_Religion', 
+        'Is_Marginalized_Caste', 'HH_Type', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets',
+        'Age_Group_Young', 'Age_Group_Senior', 'Per_Capita_Physical', 'Per_Capita_Financial',
+        'Has_Zero_Land', 'Has_Zero_Financial'
+    ])
     
     df_final = df_merged[features].copy()
     

@@ -19,26 +19,45 @@ def build_adversarial_debiasing_model():
     print("Filtering for Stage 2 (Allocation Model): Only households with debt...")
     df = df[df['In_Credit_Market'] == 1].copy()
     
-    # Categorical and numerical setup
-    categorical_cols = ['State', 'District', 'HH_Type']
+    # Base Features
+    base_features = [
+        'Is_Female_Head', 'Is_Rural', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 
+        'Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets',
+        'Age_Group_Young', 'Age_Group_Senior', 'Per_Capita_Physical', 'Per_Capita_Financial',
+        'Has_Zero_Land', 'Has_Zero_Financial'
+    ]
+    
+    # Log scale extreme power-law distributions (wealth)
+    power_law_cols = ['Financial_Assets', 'Total_Physical_Assets', 'Per_Capita_Physical', 'Per_Capita_Financial']
+    for col in power_law_cols:
+        df[col] = np.log1p(df[col])
+        
+    # One-hot encode categoricals (except District)
+    categorical_cols = ['State', 'HH_Type']
     for cat in categorical_cols:
         if cat in df.columns:
             df_cat = pd.get_dummies(df[cat], prefix=cat, drop_first=True)
             df = pd.concat([df, df_cat], axis=1)
+            base_features.extend(df_cat.columns)
             
-    # Include the base continuous features + all the new dummy columns
-    num_features = ['Is_Female_Head', 'Is_Rural', 'Is_Minority_Religion', 'Is_Marginalized_Caste', 'Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets']
-    features = num_features + [c for c in df.columns if any(c.startswith(prefix + '_') for prefix in categorical_cols)]
+    # Strict Train-Test Split BEFORE Target Encoding & Scaling
+    df_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
     
-    # Log scale extreme power-law distributions (wealth)
-    power_law_cols = ['Financial_Assets', 'Total_Physical_Assets']
-    for col in power_law_cols:
-        df[col] = np.log1p(df[col])
+    # --- TARGET ENCODING ---
+    print("Target Encoding 'District'...")
+    train_districts = df_train.groupby('District')['Is_Institutional'].mean()
+    global_mean = df_train['Is_Institutional'].mean()
     
-    # Scale continuous features to prevent adversarial NaN loss
+    df_train['District_Target_Enc'] = df_train['District'].map(train_districts).fillna(global_mean)
+    df_test['District_Target_Enc'] = df_test['District'].map(train_districts).fillna(global_mean)
+    
+    features = base_features + ['District_Target_Enc']
+    
+    # --- SCALING ---
+    scale_cols = ['Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets', 'Per_Capita_Physical', 'Per_Capita_Financial']
     scaler = StandardScaler()
-    scale_cols = ['Age_Head', 'Edu_Head', 'HH_Size', 'Land_Possessed', 'Financial_Assets', 'Total_Physical_Assets']
-    df[scale_cols] = scaler.fit_transform(df[scale_cols])
+    df_train[scale_cols] = scaler.fit_transform(df_train[scale_cols])
+    df_test[scale_cols] = scaler.transform(df_test[scale_cols])
     
     protected_attributes = {
         'Is_Rural': ('RURAL VS URBAN', 1, 0),
@@ -50,22 +69,30 @@ def build_adversarial_debiasing_model():
     print("\nExecuting AIF360 Adversarial Debiasing Models Across All Dimensions...")
     
     for attr, (desc, unpriv_val, priv_val) in protected_attributes.items():
-        dataset_orig = BinaryLabelDataset(
-            favorable_label=1, unfavorable_label=0, df=df[features + ['Is_Institutional', 'MLT']],
+        # Create Train Dataset
+        dataset_train = BinaryLabelDataset(
+            favorable_label=1, unfavorable_label=0, df=df_train[features + ['Is_Institutional', 'MLT']],
             label_names=['Is_Institutional'], protected_attribute_names=[attr],
             instance_weights_name='MLT',
             unprivileged_protected_attributes=[[unpriv_val]],
             privileged_protected_attributes=[[priv_val]]
         )
         
-        dataset_train, dataset_test = dataset_orig.split([0.8], shuffle=True, seed=42)
+        # Create Test Dataset
+        dataset_test = BinaryLabelDataset(
+            favorable_label=1, unfavorable_label=0, df=df_test[features + ['Is_Institutional', 'MLT']],
+            label_names=['Is_Institutional'], protected_attribute_names=[attr],
+            instance_weights_name='MLT',
+            unprivileged_protected_attributes=[[unpriv_val]],
+            privileged_protected_attributes=[[priv_val]]
+        )
         
         sess = tf.Session()
         debiased_model = AdversarialDebiasing(
             privileged_groups=[{attr: priv_val}],
             unprivileged_groups=[{attr: unpriv_val}],
             scope_name=f'debiased_classifier_{attr}',
-            debias=True, sess=sess, num_epochs=7, batch_size=256,
+            debias=True, sess=sess, num_epochs=10, batch_size=256,
             classifier_num_hidden_units=256
         )
         
