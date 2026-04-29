@@ -9,36 +9,36 @@ def visualize_fairness_improvements():
     # Fully populated Multi-Dimensional Metrics from Log Outputs
     records = [
         # --- Accuracy ---
-        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7121},
-        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7325},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7121},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7312},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7121},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7328},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7235},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7300},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7235},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7344},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Accuracy', 'Value': 0.7235},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Accuracy', 'Value': 0.7298},
         
         # --- Disparate Impact ---
-        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 0.9352},
-        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 0.9032},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 0.9684},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 1.0200},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 0.9243},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 0.8916},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 1.0024},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 1.0288},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 0.9403},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 0.9331},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Disparate Impact', 'Value': 0.9351},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Disparate Impact', 'Value': 0.8133},
 
         # --- Equal Opportunity Difference ---
-        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0387},
-        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0749},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0187},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': 0.0339},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0461},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0616},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': 0.0000},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': 0.0149},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0387},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0438},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Eq. Opp. Diff', 'Value': -0.0371},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Eq. Opp. Diff', 'Value': -0.1314},
 
         # --- Statistical Parity Difference ---
-        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': -0.0630},
-        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': -0.0893},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': -0.0294},
-        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': 0.0168},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': -0.0742},
-        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': -0.1027},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': 0.0022},
+        {'Dimension': 'Geography (Rural)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': 0.0253},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': -0.0553},
+        {'Dimension': 'Religion (Minority)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': -0.0601},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Baseline', 'Metric': 'Stat. Parity Diff', 'Value': -0.0627},
+        {'Dimension': 'Caste (Marginalized)', 'Model': 'Adversarial', 'Metric': 'Stat. Parity Diff', 'Value': -0.1847},
     ]
     df_metrics = pd.DataFrame(records)
     
